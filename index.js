@@ -29,7 +29,7 @@ client.once("ready", () => {
             {
                 name: "sei...",
                 type: ActivityType.Streaming,
-                url: "https://www.twitch.tv/dummy"
+                url: "https://www.twitch.tv/seijaye"
             }
         ],
         status: "online"
