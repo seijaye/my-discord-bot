@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
 const Groq = require("groq-sdk");
 
 const client = new Client({
@@ -20,8 +20,20 @@ const blockedUsers = [
     "1461223012236791942"
 ];
 
-client.once("clientReady", () => {
+client.once("ready", () => {
     console.log(`Logged in as ${client.user.username}`);
+    
+    // Set streaming status
+    client.user.setPresence({
+        activities: [
+            {
+                name: "sei...",
+                type: ActivityType.Streaming,
+                url: "https://www.twitch.tv/dummy"
+            }
+        ],
+        status: "online"
+    });
 });
 
 client.on("messageCreate", async (message) => {
