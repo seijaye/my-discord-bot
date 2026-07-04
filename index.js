@@ -20,7 +20,7 @@ const blockedUsers = [
     "1461223012236791942"
 ];
 
-client.once("ready", () => {
+client.once("clientReady", () => {
     console.log(`Logged in as ${client.user.username}`);
     
     // Set streaming status
